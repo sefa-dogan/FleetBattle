@@ -1,0 +1,38 @@
+# FleetBattle 
+### OYUNUN AMACI
+
+Amiral Battı oyununda 1 tane 5 birimlik, 1 tane 3 birimlik, 1 tane 1 birimlik gemi bulunmaktadır. 2 kişilik oynanan bu oyunda amaç;  gemilerini nasıl yerleştirdiği görülmeyen rakip oyuncunun bütün gemilerini bombalayıp yok etmektir.
+
+### OYUN NASIL OYNANIR?
+
+Oyuncu, gemilerini yerleştirmek için, yerleştirmek istediği gemiyi seçtikten sonra butonlardan oluşturulan 10x10 harita içinden geminin orta noktasını işaret eden bir koordinat seçmelidir. Bu şekilde bütün gemileri yerleştirdikten sonra "Hazır" butonuna basarak rakip oyuncuya hazır olduğu bilgisini gönderir.  2 kişilik oynanan bu oyunda rakip oyuncunun gemileri  görünmeyecektir. İlk hamle sırası ise rastgele belirlenmektedir. Oyuncu, rakip oyuncunun haritasından koordinat seçip bomba gönderecektir. Eğer rakip oyuncunun gemisini vurabilirse tekrar hamle hakkı elde edecektir, eğer vuramassa sıra rakip oyuncuya geçecektir. Bu şekilde bütün gemileri vuran oyuncu oyunu kazanmış olacaktır.
+
+## SINIFLAR
+#### FirstPlayer
+IP adresi ile bağlanacak olan oyuncuya ait sınıftır. Veritabanında koordinat kayıtları yapılacak olan tablodaki sütun bilgileri yer alır. ModelV3 klasörünün içinde Model1.tt dosyasının içinde yer alır.
+
+#### RivalPlayer
+IP adresi ile  kendisine bağlanılmasını bekleyecek olan oyuncuya ait sınıftır. Veritabanında koordinat kayıtları yapılacak olan tablodaki sütun bilgileri yer alır. ModelV3 klasörünün içinde Model1.tt dosyasının içinde yer alır.
+
+#### FirstPlayerCreateMap
+FirstPlayer’ ın haritasını oluşturur. Harita, Form ekranının sol tarafında yer alır.
+#### RivalPlayerCreateMap
+RivalPlayer’ ın haritasını oluşturur. Harita, Form ekranının sağ tarafında yer alır.
+#### IsOnShipOrNot
+Oyun oynanırken hamle yapılan buton üzerinde geminin olup olmadığını kontrol eder.
+#### TcpIp
+TCP/IP protokolü kullanılarak IP adresi ile bağlantı kurma işleminin ve iki oyuncu bilgisayarı arasındaki iletişimin sağlanması için kullanılan metodları bulundurur.
+#### Game
+Oyunun kontrolünün sağlandığı sınıftır. FirstPlayerCreateMap ve RivalPlayerCreateMap sınıflarının oluşturduğu haritaları oluşturan butonlara atanan event metodları da bu sınıfta bulunur. 
+
+### HATA SINIFLARI
+#### OutOfMapException
+Oyuncu gemilerini yerleştirirken, gemi eğer haritanın dışına taşıyor ise bu hata fırlatılır ve kullanıcı bu hata türüne göre uyarı mesaj alır.
+#### OverlappingImageException
+Oyuncunun yerleştirmeye çalıştığı gemi, yerleştirdiği diğer gemilerin üzerine denk geliyorsa bu hata fırlatılır ve kullanıcı bu hata türüne göre uyarı mesajı alır.
+
+### INTERFACE
+#### IPlayer
+IsOnShipOrNot sınıfını kullanırken, iki oyuncuya da ayrı ayrı metod yazmamak amacıyla oluşturulmuştur. RivalPlayer ve FirstPlayer birer IPlayer’ dır.
+
+
