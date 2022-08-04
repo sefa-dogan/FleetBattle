@@ -20,7 +20,6 @@ namespace AmiralBattiV2
             rivalPlayerCreateMap();
             UnEnableRivalButtons();
         }
-        //Game game = new Game();
         public List<Button> dinamikRivalButtons = new List<Button>();
         public void rivalPlayerCreateMap()
         {
@@ -38,9 +37,7 @@ namespace AmiralBattiV2
                     rivalPlayerbutton.BackColor = Color.FromArgb(0, 150, 255);
                     rivalPlayerbutton.Click += _rpCoordinate;
                     rivalPlayerbutton.Location = new Point(x, y);
-                    //rivalPlayerbutton.Enabled = false;
                     dinamikRivalButtons.Add(rivalPlayerbutton);
-                    //Controls.Add(button);
                     AddButton.Add(rivalPlayerbutton);
                     x += 40;
                 }

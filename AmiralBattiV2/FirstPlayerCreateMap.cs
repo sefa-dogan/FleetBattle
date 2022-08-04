@@ -22,7 +22,6 @@ namespace AmiralBattiV2
             UnEnableFirstButtons();
         }
         public List<Button> dinamikFirstButtons = new List<Button>();
-        //Game game = new Game();
         public void firstPlayerCreateMap()
         {
             int y = 0;
