@@ -15,13 +15,13 @@ namespace AmiralBattiV2
         TcpListener listen = new TcpListener(IPAddress.Any, PORT);
         const int PORT = 52000;
 
-        public bool Connect(string ip)                          // IP adresini kullanarak rakip oyuncuya bağlanır
+        public bool Connect(string ip)                          // IP adresini kullanarak rakip oyuncuya bağlanır ve bağlantı durumunu bool değer olarak döndürür
         {
             soket.Connect(new IPEndPoint(IPAddress.Parse(ip), PORT));
             return soket.Connected;
         }
 
-        public bool WaitConnect()                               // IP adresi ile bağlanılmasını bekler
+        public bool WaitConnect()                               // IP adresi ile bağlanılmasını bekler ve bağlantı durumunu bool değer olarak döndürür
         {
             listen.Start();
             soket = listen.AcceptSocket();
@@ -33,7 +33,7 @@ namespace AmiralBattiV2
             soket.Send(Encoding.UTF8.GetBytes(data));
         }
 
-        public string WaitData()                                // rakip oyuncudan gelecek olan bilgiyi bekler
+        public string WaitData()                                // rakip oyuncudan gelecek olan bilgiyi bekler ve bilgiyi döndürür
         {
             byte[] data = new byte[256];
             soket.Receive(data);
@@ -42,7 +42,7 @@ namespace AmiralBattiV2
             return gelenData;
         }
 
-        public int[] _WaitButtonData()                          // rakip oyuncudan gelecek olan buton bilgisini bekler
+        public int[] _WaitButtonData()                          // rakip oyuncudan gelecek olan buton bilgisini bekler ve butonun koordinatını dizi şeklinde döndürür
         {
             byte[] waitButtonData = new byte[256];
             soket.Receive(waitButtonData);
