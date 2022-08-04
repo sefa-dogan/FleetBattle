@@ -1,9 +1,0 @@
-Formda bulunan butonlardan hangi oyuncu olmak istediği seçilir.
-FirstPlayer butonuna basan oyuncu ilk gönderici olur
-RivalPlayer butonuna basan oyuncu ilk dinleyici olur 
-Gönderici olan oyuncu sadece firstplayercoordinate fonksiyonunu çalıştırır ve ilk sıra ondadır.
-dinleyici olan oyuncu sadece rivalplayercoordinate fonksiyonunu çalıştırır ve ilk sıra firsplayer dadır.
-Firstplayer a tıklayan oyuncu için, ıp adresini yazacağı ve bağlantı kuracappı buton açılır. Bu seçimler yapılmadan önce oyuncular kimin firstplayer kimin rivalplayer olacağına karar vermelidir, çünkü IP otomatik bağlanmamaktadır
-
-
-Daha sonra hamle hakkı sırayla devam eder.
