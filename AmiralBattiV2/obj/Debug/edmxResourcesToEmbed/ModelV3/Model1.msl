@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PlayerInfoV3ModelStoreContainer" CdmEntityContainer="PlayerInfoV3Entities1">
+    <EntitySetMapping Name="FirstPlayers">
+      <EntityTypeMapping TypeName="PlayerInfoV3Model.FirstPlayer">
+        <MappingFragment StoreEntitySet="FirstPlayers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ShipName" ColumnName="ShipName" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RivalPlayers">
+      <EntityTypeMapping TypeName="PlayerInfoV3Model.RivalPlayer">
+        <MappingFragment StoreEntitySet="RivalPlayers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ShipName" ColumnName="ShipName" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
