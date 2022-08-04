@@ -5,7 +5,7 @@ Amiral Battı oyununda 1 tane 5 birimlik, 1 tane 3 birimlik, 1 tane 1 birimlik g
 
 ### OYUN NASIL OYNANIR?
 
-Oyuncu, gemilerini yerleştirmek için, yerleştirmek istediği gemiyi seçtikten sonra butonlardan oluşturulan 10x10 harita içinden geminin orta noktasını işaret eden bir koordinat seçmelidir. Bu şekilde bütün gemileri yerleştirdikten sonra "Hazır" butonuna basarak rakip oyuncuya hazır olduğu bilgisini gönderir.  2 kişilik oynanan bu oyunda rakip oyuncunun gemileri  görünmeyecektir. İlk hamle sırası ise rastgele belirlenmektedir. Oyuncu, rakip oyuncunun haritasından koordinat seçip bomba gönderecektir. Eğer rakip oyuncunun gemisini vurabilirse tekrar hamle hakkı elde edecektir, eğer vuramassa sıra rakip oyuncuya geçecektir. Bu şekilde bütün gemileri vuran oyuncu oyunu kazanmış olacaktır.
+Oyuncu, gemilerini yerleştirmek için, yerleştirmek istediği gemiyi seçtikten sonra butonlardan oluşturulan 10x10 harita içinden geminin orta noktasını işaret eden bir koordinat seçmelidir. Bu şekilde bütün gemileri yerleştirdikten sonra "Hazır" butonuna basarak gemilerin isimini, yüksekliğini, genişliğini, yeni koordinatını veritabanına kaydeder ve rakip oyuncuya hazır olduğu bilgisini gönderir. 2 kişilik oynanan bu oyunda rakip oyuncunun gemileri  görünmeyecektir. İlk hamle sırası ise rastgele belirlenmektedir. Oyuncu, rakip oyuncunun haritasından koordinat seçip bomba gönderecektir. Eğer rakip oyuncunun gemisini vurabilirse tekrar hamle hakkı elde edecektir, eğer vuramassa sıra rakip oyuncuya geçecektir. Bu şekilde bütün gemileri vuran oyuncu oyunu kazanmış olacaktır.
 
 ## SINIFLAR
 #### FirstPlayer
