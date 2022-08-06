@@ -28,7 +28,7 @@ namespace AmiralBattiV2
         public Button _FPsecenekButton;
         public Button _RPsecenekButton;
         public bool AreYouFirstPlayer;
-        public bool AreYouRivalPlayer;
+        public bool AreYouRivalPlayer; 
         public void AreYouFP(bool areYouFP)
         {
             AreYouFirstPlayer = areYouFP;
