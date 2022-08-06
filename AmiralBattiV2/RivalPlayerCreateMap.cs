@@ -18,7 +18,7 @@ namespace AmiralBattiV2
             AddButton = addButton;
             _rpCoordinate = rpCoordinate;
             rivalPlayerCreateMap();
-            UnEnableRivalButtons();
+            UnEnableRivalButtons(); 
         }
         public List<Button> dinamikRivalButtons = new List<Button>();
         public void rivalPlayerCreateMap()
