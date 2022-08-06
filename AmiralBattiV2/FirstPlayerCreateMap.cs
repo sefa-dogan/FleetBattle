@@ -30,7 +30,7 @@ namespace AmiralBattiV2
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    Button firstPlayerbutton = new Button();
+                    Button firstPlayerbutton = new Button(); 
                     firstPlayerbutton.Text = "";
                     firstPlayerbutton.Name = $"fPB{i}{j}";
                     firstPlayerbutton.Size = new Size(40, 40);
