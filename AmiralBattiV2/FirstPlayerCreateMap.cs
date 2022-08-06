@@ -81,7 +81,6 @@ namespace AmiralBattiV2
                         isWin = true;
                     }
                 }
-
             }
             return isWin;
         }
