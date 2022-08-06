@@ -70,7 +70,6 @@ namespace AmiralBattiV2
             updatedValue1.Width = FirstPlayer_pBx5brm.Width;
             updatedValue1.Height = FirstPlayer_pBx5brm.Height;
 
-
             var updatedValue2 = db.FirstPlayers.Find(2);
             updatedValue2.ShipName = FirstPlayer_pBx3brm.Name;
             updatedValue2.X = FirstPlayer_pBx3brm.Location.X;
