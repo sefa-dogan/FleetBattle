@@ -53,5 +53,5 @@ namespace AmiralBattiV2
 
             return new int[] { X, Y };
         }
-    }
+    } 
 }
