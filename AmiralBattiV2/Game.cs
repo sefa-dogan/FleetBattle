@@ -83,7 +83,6 @@ namespace AmiralBattiV2
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Bilgisayarınıza bağlanılırken hata oluştu.");
             }
             return soketConnected;
