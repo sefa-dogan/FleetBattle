@@ -31,7 +31,7 @@ namespace AmiralBattiV2
                             MessageBox.Show("Geminize ateş edildi!");
                             control = true;
                         }
-                    }
+                    } 
                 }
             }
             else if (player is RivalPlayer)
