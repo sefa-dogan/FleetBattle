@@ -28,10 +28,10 @@ namespace AmiralBattiV2
                     {
                         if (resultFirst.Y <= btnY && (btnY + btn.Height) <= (resultFirst.Y + resultFirst.Height))
                         {
-                            MessageBox.Show("Geminize ateş edildi!");
+                            //MessageBox.Show("Geminize ateş edildi!");
                             control = true;
                         }
-                    } 
+                    }
                 }
             }
             else if (player is RivalPlayer)
@@ -43,7 +43,7 @@ namespace AmiralBattiV2
                     {
                         if (resultRival.Y <= btnY && (btnY + btn.Height) <= (resultRival.Y + resultRival.Height))
                         {
-                            MessageBox.Show("Geminize ateş edildi!");
+                            //MessageBox.Show("Geminize ateş edildi!");
                             control = true;
                         }
                     }

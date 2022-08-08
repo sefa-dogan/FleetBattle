@@ -30,7 +30,7 @@ namespace AmiralBattiV2
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    Button firstPlayerbutton = new Button(); 
+                    Button firstPlayerbutton = new Button();
                     firstPlayerbutton.Text = "";
                     firstPlayerbutton.Name = $"fPB{i}{j}";
                     firstPlayerbutton.Size = new Size(40, 40);
@@ -53,7 +53,9 @@ namespace AmiralBattiV2
             {
                 if (dButton.BackgroundImage == null) // arka planı boş olan, bomba resmi olmayan butonların enable özellikleri aktifleştirilir
                 {
-                    dButton.Enabled = true;
+                    //dButton.Enabled = true;
+                    dButton.Invoke((MethodInvoker)(() => dButton.Enabled = true));
+
 
                 }
             }
@@ -63,7 +65,8 @@ namespace AmiralBattiV2
         {
             foreach (var dButton in dinamikFirstButtons)
             {
-                dButton.Enabled = false;
+                //dButton.Enabled = false;
+                dButton.Invoke((MethodInvoker)(() => dButton.Enabled = false));
             }
         }
 
@@ -81,6 +84,7 @@ namespace AmiralBattiV2
                         isWin = true;
                     }
                 }
+
             }
             return isWin;
         }

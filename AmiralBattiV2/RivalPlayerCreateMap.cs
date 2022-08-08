@@ -18,7 +18,7 @@ namespace AmiralBattiV2
             AddButton = addButton;
             _rpCoordinate = rpCoordinate;
             rivalPlayerCreateMap();
-            UnEnableRivalButtons(); 
+            UnEnableRivalButtons();
         }
         public List<Button> dinamikRivalButtons = new List<Button>();
         public void rivalPlayerCreateMap()
@@ -52,7 +52,9 @@ namespace AmiralBattiV2
             {
                 if (dButton.BackgroundImage==null)
                 {
-                    dButton.Enabled = true;
+                    //dButton.Enabled = true;
+                    dButton.Invoke((MethodInvoker)(() => dButton.Enabled = true));
+
                 }
             }
         }
@@ -61,7 +63,9 @@ namespace AmiralBattiV2
         {
             foreach (var dButton in dinamikRivalButtons)
             {
-                dButton.Enabled = false;
+                //dButton.Enabled = false;
+                dButton.Invoke((MethodInvoker)(() => dButton.Enabled = false));
+
             }
         }
 
@@ -79,6 +83,7 @@ namespace AmiralBattiV2
                         isWin = true;
                     }
                 }
+
             }
             return isWin;
         }

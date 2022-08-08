@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace AmiralBattiV2
 {
     internal class OverlappingImageException:Exception

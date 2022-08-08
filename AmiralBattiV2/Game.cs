@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
 
 namespace AmiralBattiV2
 {
@@ -16,19 +17,19 @@ namespace AmiralBattiV2
         private static Control.ControlCollection _AddButton;
         public Control.ControlCollection AddButton { get { return _AddButton; } set { _AddButton = value; } }
 
-        FirstPlayerCreateMap firstPlayerCreateMap;
-        RivalPlayerCreateMap rivalPlayerCreateMap;
+        static FirstPlayerCreateMap firstPlayerCreateMap;
+        static RivalPlayerCreateMap rivalPlayerCreateMap;
 
         public PictureBox _Bomba;
         public PictureBox _Carpi;
-        public Label _fpSiraLbl;
-        public Label _rpSiraLbl;
+        public static Label _fpSiraLbl;
+        public static Label _rpSiraLbl;
         public TextBox _ipAdress;
         public Button _ipButton;
         public Button _FPsecenekButton;
         public Button _RPsecenekButton;
         public bool AreYouFirstPlayer;
-        public bool AreYouRivalPlayer; 
+        public bool AreYouRivalPlayer;
         public void AreYouFP(bool areYouFP)
         {
             AreYouFirstPlayer = areYouFP;
@@ -83,6 +84,7 @@ namespace AmiralBattiV2
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show("Bilgisayarınıza bağlanılırken hata oluştu.");
             }
             return soketConnected;
@@ -211,9 +213,9 @@ namespace AmiralBattiV2
                     firstPlayerDinamikButton.Enabled = false;
                     firstPlayerCreateMap.UnEnableFirstButtons();
                     rivalPlayerCreateMap.UnEnableRivalButtons();
-                    _rpSiraLbl.Text = "KAZANDIN!";
-                    _rpSiraLbl.Font = new Font("Microsoft Sans Serif", 50);
-                    _rpSiraLbl.Visible = true;
+                    //_rpSiraLbl.Text = "KAZANDIN!";
+                    //_rpSiraLbl.Font = new Font("Microsoft Sans Serif", 50);
+                    //_rpSiraLbl.Visible = true;
                     MessageBox.Show("Tebrikler! Kazandın.");
                 }
                 else if (turnInfo == "seninsiran")
@@ -224,8 +226,8 @@ namespace AmiralBattiV2
 
                     firstPlayerDinamikButton.BackgroundImage = _Bomba.Image;        // eğer firstplayerdan "seninsiran" bilgisi gelirse bu, isabet ettirildiği anlamına gelir ve hamle yapılmış olan butonun arkaplanına bomba resmi yerleştirilir.
                     firstPlayerDinamikButton.Enabled = false;
-                    _rpSiraLbl.Visible = true;
-                    _fpSiraLbl.Visible = false;
+                    //_rpSiraLbl.Visible = true;
+                    //_fpSiraLbl.Visible = false;
                 }
                 else if (turnInfo == "benimsiram")
                 {
@@ -235,8 +237,8 @@ namespace AmiralBattiV2
 
                     firstPlayerDinamikButton.BackgroundImage = _Carpi.Image;       // eğer firstplayerdan "benimsiram" bilgisi gelirse bu, atışın isabet etmediği anlamına gelir ve hamle yapılmış olan butonun arkaplanına çarpı resmi yerleştirilir.
                     firstPlayerDinamikButton.Enabled = false;
-                    _rpSiraLbl.Visible = false;
-                    _fpSiraLbl.Visible = true;
+                    //_rpSiraLbl.Visible = false;
+                    //_fpSiraLbl.Visible = true;
                     WaitButtonData();
                 }
             }
@@ -284,8 +286,8 @@ namespace AmiralBattiV2
                         {
                             firstPlayerDinamikButton.BackgroundImage = _Bomba.Image;
                             firstPlayerDinamikButton.Enabled = false;
-                            _rpSiraLbl.Visible = true;
-                            _fpSiraLbl.Visible = false;
+                            //_rpSiraLbl.Visible = true;
+                            //_fpSiraLbl.Visible = false;
                             rivalPlayerCreateMap.UnEnableRivalButtons();
 
                             bool isWinFP = firstPlayerCreateMap.IsLoseFirstP(_Bomba.Image);
@@ -306,8 +308,8 @@ namespace AmiralBattiV2
                         {
                             firstPlayerDinamikButton.BackgroundImage = _Carpi.Image;
                             firstPlayerDinamikButton.Enabled = false;
-                            _rpSiraLbl.Visible = false;
-                            _fpSiraLbl.Visible = true;
+                            //_rpSiraLbl.Visible = false;
+                            //_fpSiraLbl.Visible = true;
                             rivalPlayerCreateMap.EnableRivalButtons();
                             SendTurnData("benimsiram");
                         }
@@ -342,6 +344,7 @@ namespace AmiralBattiV2
         public void RivalPlayerCoordinate(object sender, EventArgs e)
         {
             rivalPlayerDinamikButton = (sender as Button);
+            //btn = rivalPlayerDinamikButton;
             rivalPlayerDinamikButtonX = rivalPlayerDinamikButton.Location.X;
             rivalPlayerDinamikButtonY = rivalPlayerDinamikButton.Location.Y;
             if (AreYouFirstPlayer)
@@ -356,9 +359,9 @@ namespace AmiralBattiV2
                     rivalPlayerDinamikButton.Enabled = false;
                     firstPlayerCreateMap.UnEnableFirstButtons();
                     rivalPlayerCreateMap.UnEnableRivalButtons();
-                    _fpSiraLbl.Text = "KAZANDIN!";
-                    _fpSiraLbl.Font = new Font("Microsoft Sans Serif", 50);
-                    _fpSiraLbl.Visible = true;
+                    //_fpSiraLbl.Text = "KAZANDIN!";
+                    //_fpSiraLbl.Font = new Font("Microsoft Sans Serif", 50);
+                    //_fpSiraLbl.Visible = true;
                     MessageBox.Show("Tebrikler! Kazandın.");
                 }
                 else if (turnInfo == "seninsiran")
@@ -369,8 +372,8 @@ namespace AmiralBattiV2
 
                     rivalPlayerDinamikButton.BackgroundImage = _Bomba.Image;        // eğer rivalplayerdan "seninsiran" bilgisi gelirse bu, isabet ettirildiği anlamına gelir ve hamle yapılmış olan butonun arkaplanına bomba resmi yerleştirilir.
                     rivalPlayerDinamikButton.Enabled = false;
-                    _rpSiraLbl.Visible = false;
-                    _fpSiraLbl.Visible = true;
+                    //_rpSiraLbl.Visible = false;
+                    //_fpSiraLbl.Visible = true;
                 }
                 else if (turnInfo == "benimsiram")
                 {
@@ -380,8 +383,8 @@ namespace AmiralBattiV2
 
                     rivalPlayerDinamikButton.BackgroundImage = _Carpi.Image;       // eğer rivalplayerdan "benimsiram" bilgisi gelirse bu, atışın isabet etmediği anlamına gelir ve hamle yapılmış olan butonun arkaplanına çarpı resmi yerleştirilir.
                     rivalPlayerDinamikButton.Enabled = false;
-                    _rpSiraLbl.Visible = true;
-                    _fpSiraLbl.Visible = false;
+                    //_rpSiraLbl.Visible = true;
+                    //_fpSiraLbl.Visible = false;
                     WaitButtonData();
                 }
 
@@ -429,8 +432,9 @@ namespace AmiralBattiV2
                         {
                             rivalPlayerDinamikButton.BackgroundImage = _Bomba.Image;
                             rivalPlayerDinamikButton.Enabled = false;
-                            _rpSiraLbl.Visible = false;
-                            _fpSiraLbl.Visible = true;
+                            //t.Start();
+                            //_rpSiraLbl.Visible = false;
+                            //_fpSiraLbl.Visible = true;
                             firstPlayerCreateMap.UnEnableFirstButtons();
 
                             bool isWinFP = rivalPlayerCreateMap.IsLoseRivalP(_Bomba.Image);    // oyuncunun bütün gemileri bombalayıp bombalamadığı kontrol edilir. Duruma göre oyunu durdurup kazanan belirlenir.
@@ -451,8 +455,8 @@ namespace AmiralBattiV2
                         {
                             rivalPlayerDinamikButton.BackgroundImage = _Carpi.Image;
                             rivalPlayerDinamikButton.Enabled = false;
-                            _rpSiraLbl.Visible = true;
-                            _fpSiraLbl.Visible = false;
+                            //_rpSiraLbl.Visible = true;
+                            //_fpSiraLbl.Visible = false;
                             firstPlayerCreateMap.EnableFirstButtons();
                             SendTurnData("benimsiram");
                         }
@@ -480,7 +484,7 @@ namespace AmiralBattiV2
         }
 
         public void WaitButtonData()                              // rakip oyuncudan, hamle yaptığı butonun bilgisi beklenir.
-        {
+         {
             int[] locationButton = tcpIp._WaitButtonData();
             int X = locationButton[0];
             int Y = locationButton[1];
@@ -490,7 +494,9 @@ namespace AmiralBattiV2
                 {
                     if (button.Location.X == X && button.Location.Y == Y)
                     {
-                        RivalPlayerCoordinate(button, new EventArgs());
+                        Thread rivalThread = new Thread(() => RivalPlayerCoordinate(button, new EventArgs()));
+                        rivalThread.Start();
+                        //RivalPlayerCoordinate(button, new EventArgs());
                         break;
                     }
                 }
@@ -501,7 +507,9 @@ namespace AmiralBattiV2
                 {
                     if (button.Location.X == X && button.Location.Y == Y)
                     {
-                        FirstPlayerCoordinate(button, new EventArgs());
+                        Thread firstThread = new Thread(() => FirstPlayerCoordinate(button, new EventArgs()));
+                        firstThread.Start();
+                        //FirstPlayerCoordinate(button, new EventArgs());
                         break;
                     }
                 }
