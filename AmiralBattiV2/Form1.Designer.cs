@@ -47,13 +47,7 @@
             this.FirstPlayer_rBtn1brm = new System.Windows.Forms.RadioButton();
             this.FirstPlayer_pBx1brm = new System.Windows.Forms.PictureBox();
             this.FirstPlayer_rBtn5brm = new System.Windows.Forms.RadioButton();
-            this.FirstPlayerSecenekBtn = new System.Windows.Forms.Button();
             this.RivalPlayerSecenekBtn = new System.Windows.Forms.Button();
-            this.tBxIpAdress = new System.Windows.Forms.TextBox();
-            this.connectIpbtn = new System.Windows.Forms.Button();
-            this.lblIpAdress = new System.Windows.Forms.Label();
-            this.rivalPlayerIpAdress = new System.Windows.Forms.Label();
-            this.findIpAdressbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bomba)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RivalPlayer_pBx3brm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RivalPlayer_pBx1brm)).BeginInit();
@@ -67,6 +61,7 @@
             // RivalPlayer_rBtn3brm
             // 
             this.RivalPlayer_rBtn3brm.AutoSize = true;
+            this.RivalPlayer_rBtn3brm.BackColor = System.Drawing.Color.Transparent;
             this.RivalPlayer_rBtn3brm.Location = new System.Drawing.Point(844, 322);
             this.RivalPlayer_rBtn3brm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RivalPlayer_rBtn3brm.Name = "RivalPlayer_rBtn3brm";
@@ -74,13 +69,14 @@
             this.RivalPlayer_rBtn3brm.TabIndex = 14;
             this.RivalPlayer_rBtn3brm.TabStop = true;
             this.RivalPlayer_rBtn3brm.Text = "3brm";
-            this.RivalPlayer_rBtn3brm.UseVisualStyleBackColor = true;
+            this.RivalPlayer_rBtn3brm.UseVisualStyleBackColor = false;
             this.RivalPlayer_rBtn3brm.Visible = false;
             this.RivalPlayer_rBtn3brm.Click += new System.EventHandler(this.RivalPlayer_rBtn3brm_Click);
             // 
             // RivalPlayer_rBtn1brm
             // 
             this.RivalPlayer_rBtn1brm.AutoSize = true;
+            this.RivalPlayer_rBtn1brm.BackColor = System.Drawing.Color.Transparent;
             this.RivalPlayer_rBtn1brm.Location = new System.Drawing.Point(926, 39);
             this.RivalPlayer_rBtn1brm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RivalPlayer_rBtn1brm.Name = "RivalPlayer_rBtn1brm";
@@ -88,13 +84,14 @@
             this.RivalPlayer_rBtn1brm.TabIndex = 13;
             this.RivalPlayer_rBtn1brm.TabStop = true;
             this.RivalPlayer_rBtn1brm.Text = "1brm";
-            this.RivalPlayer_rBtn1brm.UseVisualStyleBackColor = true;
+            this.RivalPlayer_rBtn1brm.UseVisualStyleBackColor = false;
             this.RivalPlayer_rBtn1brm.Visible = false;
             this.RivalPlayer_rBtn1brm.Click += new System.EventHandler(this.RivalPlayer_rBtn1brm_Click);
             // 
             // RivalPlayer_rBtn5brm
             // 
             this.RivalPlayer_rBtn5brm.AutoSize = true;
+            this.RivalPlayer_rBtn5brm.BackColor = System.Drawing.Color.Transparent;
             this.RivalPlayer_rBtn5brm.Location = new System.Drawing.Point(844, 39);
             this.RivalPlayer_rBtn5brm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RivalPlayer_rBtn5brm.Name = "RivalPlayer_rBtn5brm";
@@ -102,12 +99,13 @@
             this.RivalPlayer_rBtn5brm.TabIndex = 12;
             this.RivalPlayer_rBtn5brm.TabStop = true;
             this.RivalPlayer_rBtn5brm.Text = "5brm";
-            this.RivalPlayer_rBtn5brm.UseVisualStyleBackColor = true;
+            this.RivalPlayer_rBtn5brm.UseVisualStyleBackColor = false;
             this.RivalPlayer_rBtn5brm.Visible = false;
             this.RivalPlayer_rBtn5brm.Click += new System.EventHandler(this.RivalPlayer_rBtn5brm_Click);
             // 
             // readyFirstPlayer
             // 
+            this.readyFirstPlayer.BackColor = System.Drawing.Color.Transparent;
             this.readyFirstPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.readyFirstPlayer.Location = new System.Drawing.Point(554, 512);
             this.readyFirstPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -115,12 +113,13 @@
             this.readyFirstPlayer.Size = new System.Drawing.Size(145, 67);
             this.readyFirstPlayer.TabIndex = 15;
             this.readyFirstPlayer.Text = "Hazır";
-            this.readyFirstPlayer.UseVisualStyleBackColor = true;
+            this.readyFirstPlayer.UseVisualStyleBackColor = false;
             this.readyFirstPlayer.Visible = false;
             this.readyFirstPlayer.Click += new System.EventHandler(this.readyFirstPlayer_Click);
             // 
             // readyRivalPlayer
             // 
+            this.readyRivalPlayer.BackColor = System.Drawing.Color.Transparent;
             this.readyRivalPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.readyRivalPlayer.Location = new System.Drawing.Point(821, 512);
             this.readyRivalPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -128,7 +127,7 @@
             this.readyRivalPlayer.Size = new System.Drawing.Size(145, 67);
             this.readyRivalPlayer.TabIndex = 16;
             this.readyRivalPlayer.Text = "Hazır";
-            this.readyRivalPlayer.UseVisualStyleBackColor = true;
+            this.readyRivalPlayer.UseVisualStyleBackColor = false;
             this.readyRivalPlayer.Visible = false;
             this.readyRivalPlayer.Click += new System.EventHandler(this.readyRivalPlayer_Click);
             // 
@@ -154,6 +153,7 @@
             // 
             // RivalPlayer_pBx3brm
             // 
+            this.RivalPlayer_pBx3brm.BackColor = System.Drawing.Color.Transparent;
             this.RivalPlayer_pBx3brm.Image = global::AmiralBattiV2.Properties.Resources.images___Copy__2_;
             this.RivalPlayer_pBx3brm.Location = new System.Drawing.Point(844, 350);
             this.RivalPlayer_pBx3brm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -166,6 +166,7 @@
             // 
             // RivalPlayer_pBx1brm
             // 
+            this.RivalPlayer_pBx1brm.BackColor = System.Drawing.Color.Transparent;
             this.RivalPlayer_pBx1brm.Image = global::AmiralBattiV2.Properties.Resources.images___Copy__3____Copy1;
             this.RivalPlayer_pBx1brm.Location = new System.Drawing.Point(926, 66);
             this.RivalPlayer_pBx1brm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -178,6 +179,7 @@
             // 
             // RivalPlayer_pBx5brm
             // 
+            this.RivalPlayer_pBx5brm.BackColor = System.Drawing.Color.Transparent;
             this.RivalPlayer_pBx5brm.Image = global::AmiralBattiV2.Properties.Resources.images___Copy__3_;
             this.RivalPlayer_pBx5brm.Location = new System.Drawing.Point(844, 66);
             this.RivalPlayer_pBx5brm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -203,6 +205,7 @@
             // firstPlayerSiraLbl
             // 
             this.firstPlayerSiraLbl.AutoSize = true;
+            this.firstPlayerSiraLbl.BackColor = System.Drawing.Color.Transparent;
             this.firstPlayerSiraLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstPlayerSiraLbl.Location = new System.Drawing.Point(131, 528);
             this.firstPlayerSiraLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -215,6 +218,7 @@
             // rivalPlayerSiraLbl
             // 
             this.rivalPlayerSiraLbl.AutoSize = true;
+            this.rivalPlayerSiraLbl.BackColor = System.Drawing.Color.Transparent;
             this.rivalPlayerSiraLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rivalPlayerSiraLbl.Location = new System.Drawing.Point(1128, 528);
             this.rivalPlayerSiraLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -226,6 +230,7 @@
             // 
             // FirstPlayer_pBx3brm
             // 
+            this.FirstPlayer_pBx3brm.BackColor = System.Drawing.Color.Transparent;
             this.FirstPlayer_pBx3brm.Image = global::AmiralBattiV2.Properties.Resources.images___Copy__2_;
             this.FirstPlayer_pBx3brm.Location = new System.Drawing.Point(604, 350);
             this.FirstPlayer_pBx3brm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -239,6 +244,7 @@
             // FirstPlayer_rBtn3brm
             // 
             this.FirstPlayer_rBtn3brm.AutoSize = true;
+            this.FirstPlayer_rBtn3brm.BackColor = System.Drawing.Color.Transparent;
             this.FirstPlayer_rBtn3brm.Location = new System.Drawing.Point(604, 322);
             this.FirstPlayer_rBtn3brm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FirstPlayer_rBtn3brm.Name = "FirstPlayer_rBtn3brm";
@@ -246,12 +252,13 @@
             this.FirstPlayer_rBtn3brm.TabIndex = 8;
             this.FirstPlayer_rBtn3brm.TabStop = true;
             this.FirstPlayer_rBtn3brm.Text = "3brm";
-            this.FirstPlayer_rBtn3brm.UseVisualStyleBackColor = true;
+            this.FirstPlayer_rBtn3brm.UseVisualStyleBackColor = false;
             this.FirstPlayer_rBtn3brm.Visible = false;
             this.FirstPlayer_rBtn3brm.Click += new System.EventHandler(this.FirstPlayer_rBtn3brm_Click);
             // 
             // FirstPlayer_pBx5brm
             // 
+            this.FirstPlayer_pBx5brm.BackColor = System.Drawing.Color.Transparent;
             this.FirstPlayer_pBx5brm.Image = global::AmiralBattiV2.Properties.Resources.images___Copy__3_;
             this.FirstPlayer_pBx5brm.Location = new System.Drawing.Point(604, 66);
             this.FirstPlayer_pBx5brm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -265,6 +272,7 @@
             // FirstPlayer_rBtn1brm
             // 
             this.FirstPlayer_rBtn1brm.AutoSize = true;
+            this.FirstPlayer_rBtn1brm.BackColor = System.Drawing.Color.Transparent;
             this.FirstPlayer_rBtn1brm.Location = new System.Drawing.Point(688, 39);
             this.FirstPlayer_rBtn1brm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FirstPlayer_rBtn1brm.Name = "FirstPlayer_rBtn1brm";
@@ -272,12 +280,13 @@
             this.FirstPlayer_rBtn1brm.TabIndex = 7;
             this.FirstPlayer_rBtn1brm.TabStop = true;
             this.FirstPlayer_rBtn1brm.Text = "1brm";
-            this.FirstPlayer_rBtn1brm.UseVisualStyleBackColor = true;
+            this.FirstPlayer_rBtn1brm.UseVisualStyleBackColor = false;
             this.FirstPlayer_rBtn1brm.Visible = false;
             this.FirstPlayer_rBtn1brm.Click += new System.EventHandler(this.FirstPlayer_rBtn1brm_Click);
             // 
             // FirstPlayer_pBx1brm
             // 
+            this.FirstPlayer_pBx1brm.BackColor = System.Drawing.Color.Transparent;
             this.FirstPlayer_pBx1brm.Image = global::AmiralBattiV2.Properties.Resources.images___Copy__3____Copy1;
             this.FirstPlayer_pBx1brm.Location = new System.Drawing.Point(688, 66);
             this.FirstPlayer_pBx1brm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -291,6 +300,7 @@
             // FirstPlayer_rBtn5brm
             // 
             this.FirstPlayer_rBtn5brm.AutoSize = true;
+            this.FirstPlayer_rBtn5brm.BackColor = System.Drawing.Color.Transparent;
             this.FirstPlayer_rBtn5brm.Location = new System.Drawing.Point(604, 39);
             this.FirstPlayer_rBtn5brm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FirstPlayer_rBtn5brm.Name = "FirstPlayer_rBtn5brm";
@@ -298,99 +308,31 @@
             this.FirstPlayer_rBtn5brm.TabIndex = 6;
             this.FirstPlayer_rBtn5brm.TabStop = true;
             this.FirstPlayer_rBtn5brm.Text = "5brm";
-            this.FirstPlayer_rBtn5brm.UseVisualStyleBackColor = true;
+            this.FirstPlayer_rBtn5brm.UseVisualStyleBackColor = false;
             this.FirstPlayer_rBtn5brm.Visible = false;
             this.FirstPlayer_rBtn5brm.Click += new System.EventHandler(this.FirstPlayer_rBtn5brm_Click);
             // 
-            // FirstPlayerSecenekBtn
-            // 
-            this.FirstPlayerSecenekBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstPlayerSecenekBtn.Location = new System.Drawing.Point(667, 608);
-            this.FirstPlayerSecenekBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.FirstPlayerSecenekBtn.Name = "FirstPlayerSecenekBtn";
-            this.FirstPlayerSecenekBtn.Size = new System.Drawing.Size(217, 76);
-            this.FirstPlayerSecenekBtn.TabIndex = 25;
-            this.FirstPlayerSecenekBtn.Text = "First Player(On the Left)";
-            this.FirstPlayerSecenekBtn.UseVisualStyleBackColor = true;
-            this.FirstPlayerSecenekBtn.Click += new System.EventHandler(this.FirstPlayerSecenekBtn_Click);
-            // 
             // RivalPlayerSecenekBtn
             // 
+            this.RivalPlayerSecenekBtn.BackColor = System.Drawing.Color.Transparent;
             this.RivalPlayerSecenekBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RivalPlayerSecenekBtn.Location = new System.Drawing.Point(667, 703);
+            this.RivalPlayerSecenekBtn.Location = new System.Drawing.Point(547, 737);
             this.RivalPlayerSecenekBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RivalPlayerSecenekBtn.Name = "RivalPlayerSecenekBtn";
-            this.RivalPlayerSecenekBtn.Size = new System.Drawing.Size(217, 88);
+            this.RivalPlayerSecenekBtn.Size = new System.Drawing.Size(437, 56);
             this.RivalPlayerSecenekBtn.TabIndex = 25;
-            this.RivalPlayerSecenekBtn.Text = "Rival Player(On the Right)";
-            this.RivalPlayerSecenekBtn.UseVisualStyleBackColor = true;
+            this.RivalPlayerSecenekBtn.Text = "Düşmanını beklemeye başla!";
+            this.RivalPlayerSecenekBtn.UseVisualStyleBackColor = false;
             this.RivalPlayerSecenekBtn.Click += new System.EventHandler(this.RivalPlayerSecenekBtn_Click);
-            // 
-            // tBxIpAdress
-            // 
-            this.tBxIpAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBxIpAdress.Location = new System.Drawing.Point(435, 629);
-            this.tBxIpAdress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tBxIpAdress.Name = "tBxIpAdress";
-            this.tBxIpAdress.Size = new System.Drawing.Size(192, 36);
-            this.tBxIpAdress.TabIndex = 26;
-            this.tBxIpAdress.Visible = false;
-            // 
-            // connectIpbtn
-            // 
-            this.connectIpbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.connectIpbtn.Location = new System.Drawing.Point(425, 674);
-            this.connectIpbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.connectIpbtn.Name = "connectIpbtn";
-            this.connectIpbtn.Size = new System.Drawing.Size(202, 76);
-            this.connectIpbtn.TabIndex = 27;
-            this.connectIpbtn.Text = "Ip Adresine Bağlan";
-            this.connectIpbtn.UseVisualStyleBackColor = true;
-            this.connectIpbtn.Visible = false;
-            this.connectIpbtn.Click += new System.EventHandler(this.connectIpbtn_Click);
-            // 
-            // lblIpAdress
-            // 
-            this.lblIpAdress.AutoSize = true;
-            this.lblIpAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIpAdress.Location = new System.Drawing.Point(1096, 721);
-            this.lblIpAdress.Name = "lblIpAdress";
-            this.lblIpAdress.Size = new System.Drawing.Size(155, 29);
-            this.lblIpAdress.TabIndex = 28;
-            this.lblIpAdress.Text = "IP Adresiniz:";
-            // 
-            // rivalPlayerIpAdress
-            // 
-            this.rivalPlayerIpAdress.AutoSize = true;
-            this.rivalPlayerIpAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rivalPlayerIpAdress.Location = new System.Drawing.Point(1251, 721);
-            this.rivalPlayerIpAdress.Name = "rivalPlayerIpAdress";
-            this.rivalPlayerIpAdress.Size = new System.Drawing.Size(0, 29);
-            this.rivalPlayerIpAdress.TabIndex = 29;
-            // 
-            // findIpAdressbtn
-            // 
-            this.findIpAdressbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findIpAdressbtn.Location = new System.Drawing.Point(926, 708);
-            this.findIpAdressbtn.Name = "findIpAdressbtn";
-            this.findIpAdressbtn.Size = new System.Drawing.Size(174, 75);
-            this.findIpAdressbtn.TabIndex = 30;
-            this.findIpAdressbtn.Text = "IP Adresimi Bul";
-            this.findIpAdressbtn.UseVisualStyleBackColor = true;
-            this.findIpAdressbtn.Click += new System.EventHandler(this.findIpAdressbtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::AmiralBattiV2.Properties.Resources.world_of_warships;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1749, 846);
-            this.Controls.Add(this.findIpAdressbtn);
-            this.Controls.Add(this.rivalPlayerIpAdress);
-            this.Controls.Add(this.lblIpAdress);
-            this.Controls.Add(this.connectIpbtn);
-            this.Controls.Add(this.tBxIpAdress);
             this.Controls.Add(this.RivalPlayerSecenekBtn);
-            this.Controls.Add(this.FirstPlayerSecenekBtn);
             this.Controls.Add(this.RivalPlayer_pBx5brm);
             this.Controls.Add(this.RivalPlayer_rBtn3brm);
             this.Controls.Add(this.FirstPlayer_pBx3brm);
@@ -412,7 +354,7 @@
             this.Controls.Add(this.readyFirstPlayer);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Fleet Battle";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bomba)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RivalPlayer_pBx3brm)).EndInit();
@@ -447,13 +389,7 @@
         private System.Windows.Forms.PictureBox FirstPlayer_pBx1brm;
         private System.Windows.Forms.PictureBox FirstPlayer_pBx5brm;
         private System.Windows.Forms.PictureBox FirstPlayer_pBx3brm;
-        private System.Windows.Forms.Button FirstPlayerSecenekBtn;
         private System.Windows.Forms.Button RivalPlayerSecenekBtn;
-        private System.Windows.Forms.TextBox tBxIpAdress;
-        private System.Windows.Forms.Button connectIpbtn;
-        private System.Windows.Forms.Label lblIpAdress;
-        private System.Windows.Forms.Label rivalPlayerIpAdress;
-        private System.Windows.Forms.Button findIpAdressbtn;
     }
 }
 

@@ -34,7 +34,7 @@ namespace AmiralBattiV2
                     rivalPlayerbutton.Name = $"rPB{i}{j}";
                     rivalPlayerbutton.Size = new Size(40, 40);
                     rivalPlayerbutton.FlatStyle = FlatStyle.Flat;
-                    rivalPlayerbutton.BackColor = Color.FromArgb(0, 150, 255);
+                    rivalPlayerbutton.BackColor = Color.Transparent;    //Color.FromArgb(0, 150, 255);
                     rivalPlayerbutton.Click += _rpCoordinate;
                     rivalPlayerbutton.Location = new Point(x, y);
                     dinamikRivalButtons.Add(rivalPlayerbutton);
@@ -45,6 +45,7 @@ namespace AmiralBattiV2
                 x = 800;
             }
         }
+        private delegate void MyDelegate();               // void döndüren ve parametre almayan metodları temsil eden bir temsilci yani delegate oluşturuldu.
 
         public void EnableRivalButtons()
         {
@@ -53,7 +54,7 @@ namespace AmiralBattiV2
                 if (dButton.BackgroundImage==null)
                 {
                     //dButton.Enabled = true;
-                    dButton.Invoke((MethodInvoker)(() => dButton.Enabled = true));
+                    dButton.Invoke(new Action(() => dButton.Enabled = true));
 
                 }
             }
@@ -64,7 +65,7 @@ namespace AmiralBattiV2
             foreach (var dButton in dinamikRivalButtons)
             {
                 //dButton.Enabled = false;
-                dButton.Invoke((MethodInvoker)(() => dButton.Enabled = false));
+                dButton.Invoke(new Action(() => dButton.Enabled = false));
 
             }
         }

@@ -35,7 +35,7 @@ namespace AmiralBattiV2
                     firstPlayerbutton.Name = $"fPB{i}{j}";
                     firstPlayerbutton.Size = new Size(40, 40);
                     firstPlayerbutton.FlatStyle = FlatStyle.Flat;
-                    firstPlayerbutton.BackColor = Color.FromArgb(0, 150, 255);
+                    firstPlayerbutton.BackColor = Color.Transparent;
                     firstPlayerbutton.Click += _fpCoordinate;
                     firstPlayerbutton.Location = new Point(x, y);
                     dinamikFirstButtons.Add(firstPlayerbutton);
@@ -46,6 +46,7 @@ namespace AmiralBattiV2
                 x = 0;
             }
         }
+        private delegate void MyDelegate();               // void döndüren ve parametre almayan metodları temsil eden bir temsilci yani delegate oluşturuldu.
 
         public void EnableFirstButtons()
         {
@@ -54,19 +55,23 @@ namespace AmiralBattiV2
                 if (dButton.BackgroundImage == null) // arka planı boş olan, bomba resmi olmayan butonların enable özellikleri aktifleştirilir
                 {
                     //dButton.Enabled = true;
-                    dButton.Invoke((MethodInvoker)(() => dButton.Enabled = true));
-
+                    dButton.Invoke(new Action(() => dButton.Enabled = true));
+                    //dButton.BeginInvoke(new Action(()=> dButton.Enabled=true));
 
                 }
             }
         }
-
         public void UnEnableFirstButtons()
         {
             foreach (var dButton in dinamikFirstButtons)
             {
                 //dButton.Enabled = false;
-                dButton.Invoke((MethodInvoker)(() => dButton.Enabled = false));
+                dButton.Invoke(new Action(() => dButton.Enabled = false)); // burada kullanılan Invoke metodu delegate ile çalışacaktır.
+                                                                             // Delegate' e temsil edeceği metod ataması yapmadığımız veya böyle bir metod
+                                                                             // oluşturmadığımız için, yandaki kullanım ile (MyDelegate)(lambda ile oluşturulacak anonim metodun komutu),
+                                                                             // anonim metodun türünü cast kullanımı yaparak, MyDelegate şeklinde
+                                                                             // belirtiriz. Türünü belirttikten sonra anonim metodun komutunu yazarız.
+                                                                             // Bu şekilde MyDelegate tipine uyan bir anonim metod, Invoke() aracılığıyla çalıştırılır.
             }
         }
 

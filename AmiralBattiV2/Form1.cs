@@ -13,20 +13,65 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using System.Data.SqlClient;
 using System.Net;
+using System.Media;
 
 namespace AmiralBattiV2
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(string whoAmI, string ip)
         {
             InitializeComponent();
+            _whoAmI = whoAmI;
+            if (whoAmI == "firstplayer")
+            {
+                RivalPlayerSecenekBtn.Visible = false;
+                _ipAdress = ip;
+            }
+            else if (whoAmI == "rivalplayer")
+            {
+            }
+
         }
 
         Game game;
+        string _whoAmI;
+        string _ipAdress;
         private void Form1_Load(object sender, EventArgs e)
         {
-            game = new Game(Controls, bomba, carpi, firstPlayerSiraLbl, rivalPlayerSiraLbl, tBxIpAdress, connectIpbtn, FirstPlayerSecenekBtn, RivalPlayerSecenekBtn);
+            game = new Game(Controls, bomba, carpi, firstPlayerSiraLbl, rivalPlayerSiraLbl, RivalPlayerSecenekBtn);
+            if (_whoAmI=="firstplayer")
+            {
+                ConnectToRivalPlayer();
+            }
+        }
+
+        private void ConnectToRivalPlayer()
+        {
+            game.AreYouFP(true);
+            game.IpAdress = _ipAdress;
+            bool state = game.ConnectWithTcp();              // karşı bilgisayara bağlanmaya çalışır.
+
+            FirstPlayer_pBx1brm.Visible = state;
+            FirstPlayer_pBx1brm.Enabled = state;
+
+            FirstPlayer_pBx3brm.Visible = state;
+            FirstPlayer_pBx3brm.Enabled = state;
+
+            FirstPlayer_pBx5brm.Visible = state;
+            FirstPlayer_pBx5brm.Enabled = state;
+
+            FirstPlayer_rBtn1brm.Visible = state;
+            FirstPlayer_rBtn1brm.Enabled = state;
+
+            FirstPlayer_rBtn3brm.Visible = state;
+            FirstPlayer_rBtn3brm.Enabled = state;
+
+            FirstPlayer_rBtn5brm.Visible = state;
+            FirstPlayer_rBtn5brm.Enabled = state;
+
+            readyFirstPlayer.Visible = state;
+            readyFirstPlayer.Enabled = state;
         }
 
         private void FirstPlayer_rBtn5brm_Click(object sender, EventArgs e)
@@ -149,24 +194,10 @@ namespace AmiralBattiV2
             game.isGameStarted();
         }
 
-        private void FirstPlayerSecenekBtn_Click(object sender, EventArgs e)
-        {
-            tBxIpAdress.Visible = true;
-            connectIpbtn.Visible = true;
-
-            findIpAdressbtn.Visible = false;
-            lblIpAdress.Visible = false;
-            rivalPlayerIpAdress.Visible = false;
-            FirstPlayerSecenekBtn.Enabled = false;
-            RivalPlayerSecenekBtn.Enabled = false;
-            game.AreYouFP(true);
-        }
-
         private void RivalPlayerSecenekBtn_Click(object sender, EventArgs e)
         {
 
             RivalPlayerSecenekBtn.Enabled = false;
-            FirstPlayerSecenekBtn.Enabled = false;
             game.AreYouRP(true);
             bool state = game.WaitForConnect();              // bilgisayara bağlanılmasını bekler.
 
@@ -191,39 +222,6 @@ namespace AmiralBattiV2
             readyRivalPlayer.Visible = state;
             readyRivalPlayer.Enabled = state;
 
-        }
-
-        private void connectIpbtn_Click(object sender, EventArgs e)
-        {
-            game.IpAdress = tBxIpAdress.Text;
-            bool state = game.ConnectWithTcp();              // karşı bilgisayara bağlanmaya çalışır.
-
-            FirstPlayer_pBx1brm.Visible = state;
-            FirstPlayer_pBx1brm.Enabled = state;
-
-            FirstPlayer_pBx3brm.Visible = state;
-            FirstPlayer_pBx3brm.Enabled = state;
-
-            FirstPlayer_pBx5brm.Visible = state;
-            FirstPlayer_pBx5brm.Enabled = state;
-
-            FirstPlayer_rBtn1brm.Visible = state;
-            FirstPlayer_rBtn1brm.Enabled = state;
-
-            FirstPlayer_rBtn3brm.Visible = state;
-            FirstPlayer_rBtn3brm.Enabled = state;
-
-            FirstPlayer_rBtn5brm.Visible = state;
-            FirstPlayer_rBtn5brm.Enabled = state;
-
-            readyFirstPlayer.Visible = state;
-            readyFirstPlayer.Enabled = state;
-        }
-
-        private void findIpAdressbtn_Click(object sender, EventArgs e)
-        {
-            string bilgisayarAdi = Dns.GetHostName();
-            rivalPlayerIpAdress.Text = Dns.GetHostByName(bilgisayarAdi).AddressList[0].ToString();
         }
     }
 }
