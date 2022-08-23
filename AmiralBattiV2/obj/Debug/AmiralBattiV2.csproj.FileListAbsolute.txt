@@ -190,3 +190,4 @@ C:\Users\sefad\Desktop\AmiralBattiV2_Copy\AmiralBattiV2\obj\Debug\AmiralBattiV2.
 C:\Users\sefad\Desktop\AmiralBattiV2_Copy\AmiralBattiV2\obj\Debug\AmiralBattiV2.csproj.CopyComplete
 C:\Users\sefad\Desktop\AmiralBattiV2_Copy\AmiralBattiV2\obj\Debug\AmiralBattiV2.exe
 C:\Users\sefad\Desktop\AmiralBattiV2_Copy\AmiralBattiV2\obj\Debug\AmiralBattiV2.pdb
+C:\Users\sefad\Desktop\AmiralBattiV2_Copy\AmiralBattiV2\obj\Debug\AmiralBattiV2.HomeScreen.resources
