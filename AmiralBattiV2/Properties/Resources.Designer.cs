@@ -63,6 +63,16 @@ namespace AmiralBattiV2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap battleship {
+            get {
+                object obj = ResourceManager.GetObject("battleship", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bomba {
             get {
                 object obj = ResourceManager.GetObject("bomba", resourceCulture);
@@ -76,6 +86,16 @@ namespace AmiralBattiV2.Properties {
         internal static System.Drawing.Bitmap carpi {
             get {
                 object obj = ResourceManager.GetObject("carpi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fleetbattle {
+            get {
+                object obj = ResourceManager.GetObject("fleetbattle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +156,16 @@ namespace AmiralBattiV2.Properties {
         internal static System.Drawing.Bitmap images___Copy__3____Copy1 {
             get {
                 object obj = ResourceManager.GetObject("images - Copy (3) - Copy1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap world_of_warships {
+            get {
+                object obj = ResourceManager.GetObject("world-of-warships", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
