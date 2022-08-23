@@ -9,11 +9,12 @@ Oyuncu öncelikle ilk açılan "Fleet Battle Home" ismindeki ekranda bir oda olu
 ### Fleet Battle Home
 Oda oluşturulan, ağdaki odaları listeleyen, UDP ile ağda bulunan her bilgisayara oda bilgisini gönderen ve istenilen odaya bağlanma isteği göndermeyi sağlayan ekrandır.
 ![FirstScreen](https://user-images.githubusercontent.com/56110811/186230742-d32c0e37-14bf-47b6-9f16-1c44c01f4a58.PNG)
-
-
+![SecondScreen](https://user-images.githubusercontent.com/56110811/186230948-fdbdce0c-6168-41d9-8ad9-08f8b0d48f20.PNG)
 
 ### Fleet Battle 
 Oyunun, oyuncu ile etkileşime geçtiği ekrandır.
+![GameScreen](https://user-images.githubusercontent.com/56110811/186231021-e5ec61de-ef13-4afa-814d-c0dc8348f58a.PNG)
+
 ## SINIFLAR
 #### FirstPlayer
 IP adresi ile bağlanacak olan oyuncuya ait sınıftır. Veritabanında koordinat kayıtları yapılacak olan tablodaki sütun bilgileri yer alır. ModelV3 klasörünün içinde Model1.tt dosyasının içinde yer alır.
