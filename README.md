@@ -45,4 +45,4 @@ Oyuncunun yerleştirmeye çalıştığı gemi, yerleştirdiği diğer gemilerin 
 #### IPlayer
 IsOnShipOrNot sınıfını kullanırken, iki oyuncuya da ayrı ayrı metod yazmamak amacıyla oluşturulmuştur. RivalPlayer ve FirstPlayer birer IPlayer’ dır.
 
-## Not: Oyunda ses dosyaları da kullanılmıştır ancak .wav dosyalarının büyük boyutu sebebiyle yüklenememiştir.
+## Not: Oyunda kullanılan ses dosyaları .wav formatındadır ve bu formatın büyük boyutu sebebiyle, kullanıldığı formatta yüklenememiştir. Bu yüzden ses dosyaları .mp3 formatında yüklenmiştir.
