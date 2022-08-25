@@ -1,4 +1,4 @@
-﻿using AmiralBattiV2.WelcomeAndServerScreen;
+using AmiralBattiV2.WelcomeAndServerScreen;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +50,7 @@ namespace AmiralBattiV2
 
                 BackgroundWorker backgroundWorker = sender as BackgroundWorker;
 
-                var watch = new Stopwatch(); // broadcast yayın yapıldıktan sonra cevap beklenen max süre tanımlandı. KRONOMETRE
+                var watch = new Stopwatch(); // broadcast yayın yapıldıktan sonra cevap beklenen max süre tanımlamak için oluşturuldu. KRONOMETRE
                 do
                 {
                     watch.Restart();
@@ -81,8 +81,6 @@ namespace AmiralBattiV2
 
         private void ServerWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            player = "rivalplayer";
-            GameScreenWorker.RunWorkerAsync();
 
             using (UdpClient serverUdpClient = new UdpClient(ServerPort))
             {
@@ -133,26 +131,31 @@ namespace AmiralBattiV2
         }
         private void CreateRoomBtn_Click(object sender, EventArgs e)
         {
+            Button button = sender as Button;
             if (ServerWorker.IsBusy)
             {
                 ServerWorker.CancelAsync();
                 f1.Invoke(new Action(()=> f1.Dispose()));
+                button.Text = "Oda oluştur";
+                button.BackColor = Color.Transparent;
 
             }
             else
             {
                 ServerWorker.RunWorkerAsync(); // backgroundworker a ait olan RunWorkerAsync() metodu ile ilgi backgroundworker çalıştırılır.
-                Button button = sender as Button;
                 button.BackColor = Color.LightCoral;
                 button.Text = "İptal server";
 
+                player = "rivalplayer";
+                GameScreenWorker.RunWorkerAsync();
             }
         }
 
         private void ServerWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             CreateRoomBtn.BackColor = SystemColors.Control;
-            CreateRoomBtn.Text = "Sunucu çalıştır";
+            CreateRoomBtn.Text = "Oda oluştur";
+            MessageBox.Show("Yeni bir oda oluşturmak için müsaitsiniz!");
         }
 
         private void ClientWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -195,9 +198,11 @@ namespace AmiralBattiV2
             gameScreenSound.Play();
             f1 = new Form1(player, ip);
             f1.ShowDialog();
+
             while (f1.IsDisposed)
             {
                 gameScreenSound.Stop();
+                break;
             }
         }
 
