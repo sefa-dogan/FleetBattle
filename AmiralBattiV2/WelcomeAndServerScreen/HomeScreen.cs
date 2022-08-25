@@ -144,7 +144,7 @@ namespace AmiralBattiV2
             {
                 ServerWorker.RunWorkerAsync(); // backgroundworker a ait olan RunWorkerAsync() metodu ile ilgi backgroundworker çalıştırılır.
                 button.BackColor = Color.LightCoral;
-                button.Text = "İptal server";
+                button.Text = "Odayı kapat";
 
                 player = "rivalplayer";
                 GameScreenWorker.RunWorkerAsync();
