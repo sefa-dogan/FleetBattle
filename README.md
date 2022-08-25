@@ -8,8 +8,8 @@ Oyuncu öncelikle ilk açılan "Fleet Battle Home" ismindeki ekranda bir oda olu
 ## EKRANLAR
 ### Fleet Battle Home
 Oda oluşturulan, ağdaki odaları listeleyen, UDP ile ağda bulunan her bilgisayara oda bilgisini gönderen ve istenilen odaya bağlanma isteği göndermeyi sağlayan ekrandır.
-![FirstScreen](https://user-images.githubusercontent.com/56110811/186230742-d32c0e37-14bf-47b6-9f16-1c44c01f4a58.PNG)
-![SecondScreen](https://user-images.githubusercontent.com/56110811/186230948-fdbdce0c-6168-41d9-8ad9-08f8b0d48f20.PNG)
+![FirstScreen](https://user-images.githubusercontent.com/56110811/186689853-56b30661-1e22-4aa9-b55e-7df903a2ab68.PNG)
+![SecondScreen](https://user-images.githubusercontent.com/56110811/186689874-a06186c5-045f-41ea-9935-69a64059edfb.PNG)
 
 ### Fleet Battle 
 Oyunun, oyuncu ile etkileşime geçtiği ekrandır.
