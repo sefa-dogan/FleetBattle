@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,9 +27,16 @@ namespace AmiralBattiV2
             {
                 RivalPlayerSecenekBtn.Visible = false;
                 _ipAdress = ip;
+
+                ship_brm1 = FirstPlayer_pBx1brm.Location;
+                ship_brm3 = FirstPlayer_pBx3brm.Location;
+                ship_brm5 = FirstPlayer_pBx5brm.Location;
             }
             else if (whoAmI == "rivalplayer")
             {
+                ship_brm1 = RivalPlayer_pBx1brm.Location;
+                ship_brm3 = RivalPlayer_pBx3brm.Location;
+                ship_brm5 = RivalPlayer_pBx5brm.Location;
             }
 
         }
@@ -37,10 +44,13 @@ namespace AmiralBattiV2
         Game game;
         string _whoAmI;
         string _ipAdress;
+        Point ship_brm1;
+        Point ship_brm3;
+        Point ship_brm5;
         private void Form1_Load(object sender, EventArgs e)
         {
             game = new Game(Controls, bomba, carpi, firstPlayerSiraLbl, rivalPlayerSiraLbl, RivalPlayerSecenekBtn);
-            if (_whoAmI=="firstplayer")
+            if (_whoAmI == "firstplayer")
             {
                 ConnectToRivalPlayer();
             }
@@ -106,92 +116,107 @@ namespace AmiralBattiV2
 
         private void readyFirstPlayer_Click(object sender, EventArgs e)
         {
-
-            PlayerInfoV3Entities1 db = new PlayerInfoV3Entities1();
-            var updatedValue1 = db.FirstPlayers.Find(1);
-            updatedValue1.ShipName = FirstPlayer_pBx5brm.Name;
-            updatedValue1.X = FirstPlayer_pBx5brm.Location.X;
-            updatedValue1.Y = FirstPlayer_pBx5brm.Location.Y;
-            updatedValue1.Width = FirstPlayer_pBx5brm.Width;
-            updatedValue1.Height = FirstPlayer_pBx5brm.Height;
-
-
-            var updatedValue2 = db.FirstPlayers.Find(2);
-            updatedValue2.ShipName = FirstPlayer_pBx3brm.Name;
-            updatedValue2.X = FirstPlayer_pBx3brm.Location.X;
-            updatedValue2.Y = FirstPlayer_pBx3brm.Location.Y;
-            updatedValue2.Width = FirstPlayer_pBx3brm.Width;
-            updatedValue2.Height = FirstPlayer_pBx3brm.Height;
-
-            var updatedValue3 = db.FirstPlayers.Find(3);
-            updatedValue3.ShipName = FirstPlayer_pBx1brm.Name;
-            updatedValue3.X = FirstPlayer_pBx1brm.Location.X;
-            updatedValue3.Y = FirstPlayer_pBx1brm.Location.Y;
-            updatedValue3.Width = FirstPlayer_pBx1brm.Width;
-            updatedValue3.Height = FirstPlayer_pBx1brm.Height;
-
-            db.SaveChanges();
-
-            FirstPlayer_rBtn5brm.Enabled = false;
-            FirstPlayer_rBtn3brm.Enabled = false;
-            FirstPlayer_rBtn1brm.Enabled = false;
-            FirstPlayer_rBtn5brm.Visible = false;
-            FirstPlayer_rBtn3brm.Visible = false;
-            FirstPlayer_rBtn1brm.Visible = false;
+            if (!(ship_brm1 == FirstPlayer_pBx1brm.Location || ship_brm3 == FirstPlayer_pBx3brm.Location || ship_brm5 == FirstPlayer_pBx5brm.Location))
+            {
+                PlayerInfoV3Entities1 db = new PlayerInfoV3Entities1();
+                var updatedValue1 = db.FirstPlayers.Find(1);
+                updatedValue1.ShipName = FirstPlayer_pBx5brm.Name;
+                updatedValue1.X = FirstPlayer_pBx5brm.Location.X;
+                updatedValue1.Y = FirstPlayer_pBx5brm.Location.Y;
+                updatedValue1.Width = FirstPlayer_pBx5brm.Width;
+                updatedValue1.Height = FirstPlayer_pBx5brm.Height;
 
 
-            FirstPlayer_pBx5brm.Visible = false;
-            FirstPlayer_pBx3brm.Visible = false;
-            FirstPlayer_pBx1brm.Visible = false;
+                var updatedValue2 = db.FirstPlayers.Find(2);
+                updatedValue2.ShipName = FirstPlayer_pBx3brm.Name;
+                updatedValue2.X = FirstPlayer_pBx3brm.Location.X;
+                updatedValue2.Y = FirstPlayer_pBx3brm.Location.Y;
+                updatedValue2.Width = FirstPlayer_pBx3brm.Width;
+                updatedValue2.Height = FirstPlayer_pBx3brm.Height;
 
-            readyFirstPlayer.Visible = false;
-            game.FirstPlayerReady = "hazir";
-            game.firstPlayerPicture = null;
-            game.isGameStarted();
+                var updatedValue3 = db.FirstPlayers.Find(3);
+                updatedValue3.ShipName = FirstPlayer_pBx1brm.Name;
+                updatedValue3.X = FirstPlayer_pBx1brm.Location.X;
+                updatedValue3.Y = FirstPlayer_pBx1brm.Location.Y;
+                updatedValue3.Width = FirstPlayer_pBx1brm.Width;
+                updatedValue3.Height = FirstPlayer_pBx1brm.Height;
+
+                db.SaveChanges();
+
+                FirstPlayer_rBtn5brm.Enabled = false;
+                FirstPlayer_rBtn3brm.Enabled = false;
+                FirstPlayer_rBtn1brm.Enabled = false;
+                FirstPlayer_rBtn5brm.Visible = false;
+                FirstPlayer_rBtn3brm.Visible = false;
+                FirstPlayer_rBtn1brm.Visible = false;
+
+
+                FirstPlayer_pBx5brm.Visible = false;
+                FirstPlayer_pBx3brm.Visible = false;
+                FirstPlayer_pBx1brm.Visible = false;
+
+                readyFirstPlayer.Visible = false;
+                game.FirstPlayerReady = "hazir";
+                game.firstPlayerPicture = null;
+                game.isGameStarted();
+            }
+            else
+            {
+                MessageBox.Show("Bütün gemileri haritaya yerleştirin!");
+            }
+
         }
 
 
         private void readyRivalPlayer_Click(object sender, EventArgs e)
         {
-            PlayerInfoV3Entities1 db = new PlayerInfoV3Entities1();
-            var updatedValue1 = db.RivalPlayers.Find(1);
-            updatedValue1.ShipName = RivalPlayer_pBx5brm.Name;
-            updatedValue1.X = RivalPlayer_pBx5brm.Location.X;
-            updatedValue1.Y = RivalPlayer_pBx5brm.Location.Y;
-            updatedValue1.Width = RivalPlayer_pBx5brm.Width;
-            updatedValue1.Height = RivalPlayer_pBx5brm.Height;
+            if (!(ship_brm1 == RivalPlayer_pBx1brm.Location || ship_brm3 == RivalPlayer_pBx3brm.Location || ship_brm5 == RivalPlayer_pBx5brm.Location))
+            {
+                PlayerInfoV3Entities1 db = new PlayerInfoV3Entities1();
+                var updatedValue1 = db.RivalPlayers.Find(1);
+                updatedValue1.ShipName = RivalPlayer_pBx5brm.Name;
+                updatedValue1.X = RivalPlayer_pBx5brm.Location.X;
+                updatedValue1.Y = RivalPlayer_pBx5brm.Location.Y;
+                updatedValue1.Width = RivalPlayer_pBx5brm.Width;
+                updatedValue1.Height = RivalPlayer_pBx5brm.Height;
 
-            var updatedValue2 = db.RivalPlayers.Find(2);
-            updatedValue2.ShipName = RivalPlayer_pBx3brm.Name;
-            updatedValue2.X = RivalPlayer_pBx3brm.Location.X;
-            updatedValue2.Y = RivalPlayer_pBx3brm.Location.Y;
-            updatedValue2.Width = RivalPlayer_pBx3brm.Width;
-            updatedValue2.Height = RivalPlayer_pBx3brm.Height;
+                var updatedValue2 = db.RivalPlayers.Find(2);
+                updatedValue2.ShipName = RivalPlayer_pBx3brm.Name;
+                updatedValue2.X = RivalPlayer_pBx3brm.Location.X;
+                updatedValue2.Y = RivalPlayer_pBx3brm.Location.Y;
+                updatedValue2.Width = RivalPlayer_pBx3brm.Width;
+                updatedValue2.Height = RivalPlayer_pBx3brm.Height;
 
-            var updatedValue3 = db.RivalPlayers.Find(3);
-            updatedValue3.ShipName = RivalPlayer_pBx1brm.Name;
-            updatedValue3.X = RivalPlayer_pBx1brm.Location.X;
-            updatedValue3.Y = RivalPlayer_pBx1brm.Location.Y;
-            updatedValue3.Width = RivalPlayer_pBx1brm.Width;
-            updatedValue3.Height = RivalPlayer_pBx1brm.Height;
-            db.SaveChanges();
+                var updatedValue3 = db.RivalPlayers.Find(3);
+                updatedValue3.ShipName = RivalPlayer_pBx1brm.Name;
+                updatedValue3.X = RivalPlayer_pBx1brm.Location.X;
+                updatedValue3.Y = RivalPlayer_pBx1brm.Location.Y;
+                updatedValue3.Width = RivalPlayer_pBx1brm.Width;
+                updatedValue3.Height = RivalPlayer_pBx1brm.Height;
+                db.SaveChanges();
 
-            game.rivalPlayerPicture = null;
-            readyRivalPlayer.Visible = false;
+                game.rivalPlayerPicture = null;
+                readyRivalPlayer.Visible = false;
 
-            RivalPlayer_rBtn5brm.Enabled = false;
-            RivalPlayer_rBtn3brm.Enabled = false;
-            RivalPlayer_rBtn1brm.Enabled = false;
-            RivalPlayer_rBtn5brm.Visible = false;
-            RivalPlayer_rBtn3brm.Visible = false;
-            RivalPlayer_rBtn1brm.Visible = false;
+                RivalPlayer_rBtn5brm.Enabled = false;
+                RivalPlayer_rBtn3brm.Enabled = false;
+                RivalPlayer_rBtn1brm.Enabled = false;
+                RivalPlayer_rBtn5brm.Visible = false;
+                RivalPlayer_rBtn3brm.Visible = false;
+                RivalPlayer_rBtn1brm.Visible = false;
 
-            RivalPlayer_pBx5brm.Visible = false;
-            RivalPlayer_pBx3brm.Visible = false;
-            RivalPlayer_pBx1brm.Visible = false;
+                RivalPlayer_pBx5brm.Visible = false;
+                RivalPlayer_pBx3brm.Visible = false;
+                RivalPlayer_pBx1brm.Visible = false;
 
-            game.RivalPlayerReady = "hazir";
-            game.isGameStarted();
+                game.RivalPlayerReady = "hazir";
+                game.isGameStarted();
+            }
+            else
+            {
+                MessageBox.Show("Bütün gemileri haritaya yerleştirin!");
+            }
+            
         }
 
         private void RivalPlayerSecenekBtn_Click(object sender, EventArgs e)
