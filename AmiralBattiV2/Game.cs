@@ -1,4 +1,4 @@
-﻿using AmiralBattiV2.ModelV3;
+using AmiralBattiV2.ModelV3;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -62,11 +62,11 @@ namespace AmiralBattiV2
                 //_ipButton.Visible = false;
                 //_FPsecenekButton.Visible = false;
                 _RPsecenekButton.Visible = false;
-                MessageBox.Show("Karşı bilgisayara başarıyla bağlanıldı.");
+                MessageBox.Show("Rakip oyuncuya bağlanıldı.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Karşı bilgisayara bağlanılırken hata oluştu.");
+                MessageBox.Show("Rakip oyuncuya bağlanılırken hata oluştu.");
             }
             return soketConnected;
         }
@@ -82,12 +82,12 @@ namespace AmiralBattiV2
                 //_ipButton.Visible = false;
                 //_FPsecenekButton.Visible = false;
                 _RPsecenekButton.Visible = false;
-                MessageBox.Show("Bilgisayarınıza başarıyla bağlanıldı.");
+                MessageBox.Show("Rakip oyuncu odanıza giriş yaptı.");
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show("Bilgisayarınıza bağlanılırken hata oluştu.");
+                MessageBox.Show("Rakip oyuncu odanıza giriş yaparken hata oluştu.");
             }
             return soketConnected;
         }
